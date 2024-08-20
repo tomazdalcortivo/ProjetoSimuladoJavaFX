@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="br.edu.ifpr.ads.visao.SimuladoControllerView">
+    <!-- Topo com ComboBox e Título -->
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <Label fx:id="NomeDisiplina" style="-fx-font-size: 16px; -fx-padding: 5; -fx-font-weight: bold;" text="DISCIPLINA" />
+            <ComboBox fx:id="cbEscolhaQuestao" maxWidth="Infinity" BorderPane.alignment="CENTER" />
+        </VBox>
+    </top>
+
+    <!-- Corpo Principal -->
+    <center>
+        <HBox spacing="20" style="-fx-padding: 20;">
+            <!-- Texto da Questão -->
+            <VBox HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label fx:id="numeroQuestão" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="QUESTÃO 1" />
+                    <!-- Espaço para empurrar o botão para a direita -->
+                    <Region HBox.hgrow="ALWAYS" />
+                    <!-- Botão "Ver imagem" -->
+                    <Button fx:id="btnVerImagem" onAction="#onVerImagemButtonClicked" text="Ver imagem" />
+                </HBox>
+                <TextArea fx:id="taQuestao" editable="false" text="Considerando o movimento do caule em direção à luz e a ação da auxina, observe a imagem abaixo e assinale o que for correto." wrapText="true" VBox.vgrow="ALWAYS" />
+            </VBox>
+
+            <!-- Opções de Resposta e Somatório -->
+            <VBox spacing="15" HBox.hgrow="ALWAYS">
+                <CheckBox text="O crescimento orientado da planta em resposta a um estímulo luminoso, tal como observado na imagem acima, é chamado de fototropismo." />
+                <CheckBox text="A imagem representa um caso de nastismo, em que a plântula não responde ao estímulo externo." />
+                <CheckBox text="O fototropismo, diferente de outros tropismos, pode ser apenas positivo, sendo observado tanto no caule como na raiz." />
+                <CheckBox text="A luz faz com que a auxina seja translocada para o lado sombreado do ápice em crescimento, onde estimula o alongamento celular, promovendo..." />
+
+                <!-- Campo de Texto para o Somatório -->
+                <HBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="Somatório:" />
+                    <TextField fx:id="tfSomatorio" editable="false" prefWidth="50.0" text="0" />
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+
+    <!-- Rodapé com Botões -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 10;">
+            <!-- Botões de Navegação -->
+            <Button fx:id="btnVoltar" text="⯇" />
+            <Button fx:id="btnProximo" text="⯈" />
+
+            <!-- Espaço flexível -->
+            <Region HBox.hgrow="ALWAYS" />
+
+            <!-- Botões de Ação -->
+            <Button fx:id="btnLimpar" text="Limpar" />
+            <Button fx:id="btnCorrigir" text="Corrigir" />
+        </HBox>
+    </bottom>
+</BorderPane>
